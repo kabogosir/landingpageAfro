@@ -1377,6 +1377,11 @@ section.banner-details-wrap {
     background: #f5f8ff;
     color: #002ca6;
 }
+.plan-details-data .param {
+    font-size: 14px;
+    padding: 0px 20px;
+    text-align: center;
+}
 .pricing-plans-boxes .detail-boxes p {
     background: #f5f8ff;
     padding: 5px 15% 12px;
