@@ -143,7 +143,7 @@
         <div class="intro-info">
           <br>
           <br>
-          <h2>The World’s Only<br><span>Afrobeat Music Pool </span><br>connecting <span id="dj-count-container"></span> DJs <br>and <span id="producer-count-container"></span> producers worldwide</h2>
+          <h2>The World’s Only<br><span>Afrobeat Music Pool </span><br>connecting <span id="dj-count-container" style="color: #ff689b;"></span> DJs <br>and <span id="producer-count-container" style="color: #ff689b;" ></span> producers worldwide</h2>
 
           <div>
             <a href="https://app.afrobeatdjpool.com/producers/sign_up" class="btn-get-started scrollto">Artist Sign up</a>
@@ -471,7 +471,7 @@
   
   <script>
         // Fetch the count from the URL
-        fetch('https://afrobeat-staging.herokuapp.com/api/djs/dj_count')
+        fetch('https://app.afrobeatdjpool.com/api/djs/dj_count')
             .then(response => response.json())
             .then(data => {
                 // Insert the count into the HTML
@@ -485,7 +485,7 @@
 
     <script>
         // Fetch the count from the URL
-        fetch('https://afrobeat-staging.herokuapp.com/api/djs/producer_count')
+        fetch('https://app.afrobeatdjpool.com/api/djs/producer_count')
             .then(response => response.json())
             .then(data => {
                 // Insert the count into the HTML
