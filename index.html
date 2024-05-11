@@ -77,9 +77,7 @@
   
   <script>
  (function(d,s,i){var 
- f,j;f=d.getElementsByTagName(s)[0];j=d.createElement(s);j.async=true;j.src='https://mtag.microsoft.com/tag  s/'+i+'.js';j.referrerPolicy='no-referrer-when-
- s/'+i+'.js';j.referrerPolicy='no-referrer-when-
-   downgrade';f.parentNode.insertBefore(j,f);})(document,'script','14018773254950');   
+ f,j;f=d.getElementsByTagName(s)[0];j=d.createElement(s);j.async=true;j.src='https://mtag.microsoft.com/tag  s/'+i+'.js';j.referrerPolicy='no-referrer-when-s/'+i+'.js';j.referrerPolicy='no-referrer-when-downgrade';f.parentNode.insertBefore(j,f);})(document,'script','14018773254950');   
   </script>
   
   
@@ -145,7 +143,8 @@
         <div class="intro-info">
           <br>
           <br>
-          <h2>The World’s Only<br><span>Afrobeat Music Pool </span><br>and DJ Network</h2>
+          <h2>The World’s Only<br><span>Afrobeat Music Pool </span><br>connecting <div id="dj-count-container"></div> DJs and <div id="producer-count-container"></div> producers worldwide</h2>
+
           <div>
             <a href="https://app.afrobeatdjpool.com/producers/sign_up" class="btn-get-started scrollto">Artist Sign up</a>
             <a href="https://app.afrobeatdjpool.com/djs/sign_up" class="btn-services scrollto">Dj/radiostation Sign up</a>
@@ -470,7 +469,33 @@
   <script src="js/owl.carousel.min.js"></script>
   <script src="lib/owlcarousel/owl.carousel.min.js"></script>
   
-  
+  <script>
+        // Fetch the count from the URL
+        fetch('https://afrobeat-staging.herokuapp.com/api/djs/dj_count')
+            .then(response => response.json())
+            .then(data => {
+                // Insert the count into the HTML
+                document.getElementById('dj-count-container').textContent = data.count;
+            })
+            .catch(error => {
+                console.error('Error fetching DJ count:', error);
+                document.getElementById('dj-count-container').textContent = '';
+            });
+    </script>
+
+    <script>
+        // Fetch the count from the URL
+        fetch('https://afrobeat-staging.herokuapp.com/api/djs/producer_count')
+            .then(response => response.json())
+            .then(data => {
+                // Insert the count into the HTML
+                document.getElementById('producer-count-container').textContent = data.count;
+            })
+            .catch(error => {
+                console.error('Error fetching Producer count:', error);
+                document.getElementById('producer-count-container').textContent = '';
+            });
+    </script>
 
   <!-- Template Main Javascript File -->
   <script src="js/main.js"></script>
